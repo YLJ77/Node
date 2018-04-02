@@ -7,6 +7,7 @@
 let http = require('http');
 let url = require('url');
 let StringDecoder = require('string_decoder').StringDecoder;
+let config = require('./config');
 
 
 // Define the handlers
@@ -45,7 +46,7 @@ let server = http.createServer((req,res)=>{
     // Get the HTTP Method
     let method = req.method.toLowerCase();
 
-    // Get the HTTP Method
+    // Get the headers as an object
     let headers = req.headers;
 
     // Get the payload, if any
@@ -81,6 +82,7 @@ let server = http.createServer((req,res)=>{
             let payloadString = JSON.stringify(payload);
 
             // Send the response
+            res.setHeader('Content-type', 'application/json');
             res.writeHead(statusCode);
             res.end(payloadString);
 
@@ -93,8 +95,8 @@ let server = http.createServer((req,res)=>{
 
 
 // Start the server, and have it listen on port 3000
-server.listen(3000,()=>{
-    console.log('The server is listening on port 3000');
+server.listen(config.port,()=>{
+    console.log(`The server is listening on port ${config.port} in ${config.envName} mode `);
 });
 
 
