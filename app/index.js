@@ -10,23 +10,12 @@ const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
 const fs = require('fs');
-
-// Define the handlers
-let handlers = {};
-
-// Ping handler
-handlers.ping = (data, callback)=>{
-    callback(200);
-}
-
-// Not found handler
-handlers.notFound = (data, callback)=>{
-    callback(404);
-}
+const handlers = require('./lib/handlers');
 
 // Define a request router
 let router = {
-    'ping': handlers.ping
+    'ping': handlers.ping,
+    'users': handlers.users
 }
 
 
