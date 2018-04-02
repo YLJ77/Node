@@ -11,7 +11,6 @@ const StringDecoder = require('string_decoder').StringDecoder;
 const config = require('./config');
 const fs = require('fs');
 
-
 // Define the handlers
 let handlers = {};
 
