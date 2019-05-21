@@ -1,8 +1,8 @@
 {
-  "name": "node",
+  "name": "Node",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/YLJ77/Node.git"
   },
-  "author": "boom",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/YLJ77/Node/issues"
   },
   "homepage": "https://github.com/YLJ77/Node#readme",
   "dependencies": {
-    "lodash": "^4.17.10",
-    "yargs": "^11.0.0"
+    "chalk": "^2.4.2",
+    "validator": "^10.11.0"
   }
 }
